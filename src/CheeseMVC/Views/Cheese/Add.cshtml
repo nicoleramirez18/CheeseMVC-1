@@ -1,0 +1,38 @@
+﻿<!--updated add form to use viewmodels-->
+@model CheeseMVC.ViewModels.AddCheeseViewModel
+
+<h1>Add Cheese</h1>
+
+<!--add asp-controller and asp-action methods to show where form will post-->
+<!--tag helpers: provided by Razor engine, helps generate html tied to viewmodel classes-->
+<form asp-controller="Cheese" asp-action="Add" method="post">
+
+    <!--display all error messages in the div that will be coming into the view (associated with data for
+        this particular form-->
+    <!--<div asp-validation-summary="All"><div>-->
+
+    <div class="form-group">
+        <!--want to generate a name property for the viewmodel-->
+        <label asp-for="Name"></label>
+        <!--remove name, id, and type-->
+        <input class="form-control" asp-for="Name" />
+        <!--can display only one error message at a time using code below-->
+        <span asp-validation-for="Name"></span>
+    </div>
+
+    <div class="form-group">
+        <label asp-for="Description"></label>
+        <input class="form-control" asp-for="Description" />
+        <span asp-validation-for="Description"></span>
+    </div>
+
+    <!--use select to display form to choose which type of cheese
+    use asp-items to specifiy where information came from-->
+    <div class="form-group">
+        <label asp-for="Type"></label>
+        <select asp-for="Type" asp-items="Model.CheeseTypes"></select>
+    </div>
+
+    <input type="submit" value="Add Cheese" />
+
+</form>

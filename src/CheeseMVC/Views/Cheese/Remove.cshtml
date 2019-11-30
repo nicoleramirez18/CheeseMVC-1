@@ -1,0 +1,20 @@
+﻿<h1>@ViewBag.title</h1>
+
+<form method="post">
+
+    <!--loop over cheeses that were added-->
+    @foreach (var cheese in ViewBag.cheeses)
+    {
+        <!--id: use from cheese class to determine cheese that will be deleted
+            value: piece of data that is sent across server and received by controller
+            if you use cheese.Name, it wouldn't be able to distinguish between objects with the same name-->
+        <input type="checkbox" name="cheeseIds" id="@cheese.CheeseId" value="@cheese.CheeseId" /> 
+        <label for="@cheese.CheeseId">@cheese.Name</label>
+        <br />
+    }
+
+    <input type="submit" value="Remove Selected Cheese(s)" />
+</form>
+
+<!--when submitting form, id that is in value attribute will be sent to server in something called cheeseIds
+    (see Cheese Controller IActionResult Remove o see how it relates)-->
