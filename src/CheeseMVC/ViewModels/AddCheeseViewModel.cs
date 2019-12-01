@@ -27,6 +27,8 @@ namespace CheeseMVC.ViewModels
         //add property to represent cheese type user is going to set when they create the form
         //stores type of cheese that the user has selected
         public CheeseType Type { get; set; }
+        [Range(1,5)]
+        public int Rating { get; set; }
 
         //create list of cheese types for user to select
         public List<SelectListItem> CheeseTypes { get; set; }

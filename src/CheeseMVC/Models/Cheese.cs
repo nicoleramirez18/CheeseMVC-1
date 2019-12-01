@@ -16,6 +16,7 @@ namespace CheeseMVC.Models
         public int CheeseId { get; set; }
         //used internally to initially be one
         private static int nextId = 1;
+        public int Rating { get; set; }
 
         //need public constructor to create new cheese class
         /*

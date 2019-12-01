@@ -19,6 +19,8 @@
         <th>Name</th>
         <th>Description</th>
         <th>Type</th>
+        <th>Rating</th>
+        <th>Edit</th>
     </tr>
 
     <!--use var instead of class Cheese because Razor compiler doesn't understand Cheese-->
@@ -29,7 +31,8 @@
             <td>@cheese.Name</td>
             <td>@cheese.Description</td>
             <td>@cheese.Type</td>
-            <td><a asp-controller="Cheese" asp-action="Edit" asp-route-cheeseID="@cheese.CheeseId">Edit</a></td>
+            <td>@cheese.Rating</td>
+            <td><a asp-controller="Cheese" asp-action="Edit" asp-route-cheeseID="@cheese.CheeseId">Click Here</a></td>
         </tr>
     }
 </table>

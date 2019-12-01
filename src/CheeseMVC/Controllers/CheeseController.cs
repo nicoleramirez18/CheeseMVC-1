@@ -29,6 +29,15 @@ namespace CheeseMVC.Controllers
 
         public IActionResult Add()
         {
+            Cheese newCheese = new Cheese()
+            {
+                Name = "cheddar",
+                Description = "mild yellow",
+                Type = CheeseType.Hard,
+                CheeseId = 0,
+                Rating = 4
+
+            };
             //create new instance of view model
             AddCheeseViewModel addCheeseViewModel = new AddCheeseViewModel();
             return View(addCheeseViewModel);
